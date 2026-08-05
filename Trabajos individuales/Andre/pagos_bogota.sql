@@ -6,7 +6,8 @@ nombre VARCHAR(50) NOT NULL,
 apellido VARCHAR(50) NOT NULL,
 ciudad VARCHAR(40) DEFAULT 'Bogota',
 localidad VARCHAR(40),
-fecha_registro DATE NOT NULL
+fecha_registro DATE NOT NULL,
+fecha date not null
 );
 CREATE TABLE cuentas (
 id_cuenta INT AUTO_INCREMENT PRIMARY KEY,
