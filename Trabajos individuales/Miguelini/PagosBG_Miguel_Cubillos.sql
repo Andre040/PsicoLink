@@ -29,33 +29,14 @@ CREATE TABLE comercios(
 CREATE TABLE transacciones(
 id_transacciones INT AUTO_INCREMENT PRIMARY KEY,
 id_cuenta INT NOT NULL,
-id_comercio INT,
+id_comercios INT,
 valor DECIMAL(12,2) NOT NULL,
 fecha_transaccion DATE NOT NULL,
 tipo VARCHAR(20),
 FOREIGN KEY (id_cuenta) REFERENCES cuentas(id_cuenta),
-FOREIGN KEY (id_comercion) REFERENCES comercios(id_comercio)
+FOREIGN KEY (id_comercios) REFERENCES comercios(id_comercios)
 
 );
 
-INSERT INTO clientes (nombre, apellido, ciudad, localidad, fecha) VALUES
-('Muricio', 'Torres', 'Bogota', 'Suba', '2026-01-29'),
-('Camilo', 'Jimenez', 'Bogota', 'Kennedy', '2026-11-18'),
-('Juliana', 'Martinez', 'Bogota', 'Usaquen', '2026-07-05'),
-('Santiago', 'Gomez', 'Bogota', 'Engativa', '2026-04-12');
 
-INSERT INTO comercios (nombre_comercio, categoria, ciudad) VALUES
-('Rappi', 'Domicilios', 'Bogota'),
-('Exito Chapinero', 'Supermercado', 'Bogota'),
-('D1 Suba', 'Tienda de descuento', 'Bogota'),
-('EDS Terpel Autopista', 'Combustible', 'Bogota');
 
-SELECT id_transaccion, valor, fecha_transaccion FROM transacciones
-WHERE valor > 30000 AND tipo = 'Pago';
-DELETE FROM clientes WHERE id_clientes = 5;
-
-INSERT INTO clientes (nombre, apellido, ciudad, localidad, fecha_registro)
-VALUES ('Sergio', 'Castaneda', 'Bogota', 'Engativa', '2026-02-10');
-SELECT id_cliente, saldo FROM cuentas
-WHERE saldo>100000;
-DELETE FROM comercios WHERE categoria = 'combustible'
