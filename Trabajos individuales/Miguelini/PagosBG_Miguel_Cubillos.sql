@@ -7,6 +7,7 @@ CREATE TABLE clientes(
   apellido VARCHAR(50) NOT NULL,
   ciudad VARCHAR(40) DEFAULT 'Bogota',
   localidad VARCHAR(40),
+  fecha DATE NOT NULL,
   fecha_registro DATE NOT NULL,
   id_referido DATE NOT NULL
 );
