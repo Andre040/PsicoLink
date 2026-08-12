@@ -7,7 +7,10 @@ apellido VARCHAR(50) NOT NULL,
 ciudad VARCHAR(40) DEFAULT 'Bogota',
 localidad VARCHAR(40),
 fecha_registro DATE NOT NULL,
+id_referido INT NULL,
+FOREIGN KEY (id_referido) REFERENCES clientes(id_cliente),
 fecha date not null
+
 );
 CREATE TABLE cuentas (
 id_cuenta INT AUTO_INCREMENT PRIMARY KEY,
@@ -81,3 +84,31 @@ select max(saldo) as saldo_maximo
 from cuentas;
 select min(saldo) as saldo_minimo
 from cuentas;
+
+SELECT c.nombre, c.apellido, cu.saldo, cu.tipo_cuenta
+FROM clientes c
+INNER JOIN cuentas cu ON c.id_cliente = cu.id_cliente;
+
+SELECT c.nombre, c.apellido, cu.saldo
+FROM clientes c
+LEFT JOIN cuentas cu ON c.id_cliente = cu.id_cliente;
+
+SELECT co.nombre_comercio, t.valor, t.fecha_transaccion
+FROM transacciones t
+RIGHT JOIN comercios co ON t.id_comercio = co.id_comercio;
+
+SELECT c.nombre, cu.saldo
+FROM clientes c
+LEFT JOIN cuentas cu ON c.id_cliente = cu.id_cliente
+UNION
+SELECT c.nombre, cu.saldo
+FROM clientes c
+RIGHT JOIN cuentas cu ON c.id_cliente = cu.id_cliente;
+
+SELECT c.nombre, co.nombre_comercio
+FROM clientes c
+CROSS JOIN comercios co;
+
+SELECT r.nombre AS cliente_referido, o.nombre AS referido_por
+FROM clientes r
+INNER JOIN clientes o ON r.id_referido = o.id_cliente;
