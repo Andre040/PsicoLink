@@ -112,3 +112,19 @@ CROSS JOIN comercios co;
 SELECT r.nombre AS cliente_referido, o.nombre AS referido_por
 FROM clientes r
 INNER JOIN clientes o ON r.id_referido = o.id_cliente;
+
+SELECT c.nombre, c.apellido, t.valor, t.fecha_transaccion
+FROM clientes c
+INNER JOIN cuentas cu ON c.id_cliente = cu.id_cliente
+INNER JOIN transacciones t ON cu.id_cuenta = t.id_cuenta;
+
+SELECT co.nombre_comercio, t.valor
+FROM comercios co
+LEFT JOIN transacciones t ON co.id_comercio = t.id_comercio;
+
+SELECT r.nombre AS referido, r.localidad,
+       o.nombre AS invitado_por, o.localidad AS localidad_invitador
+FROM clientes r
+INNER JOIN clientes o ON r.id_referido = o.id_cliente;
+
+																																			
