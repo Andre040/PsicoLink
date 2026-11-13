@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PsicoLink</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+
+    <!-- Iconos Bootstrap -->
+    <link rel="stylesheet" href="../style/bootstrap-icons.min.css">
+
+    <!-- Estilos pagina principal -->
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="public-header" id="publicHeader">
+    
+      <a href="#" class="brand" data-view="home"><img src="../img/logo.png" alt="Logo PsicoLink"></a>
+      <button class="mobile-menu-btn" id="publicMenuBtn" aria-label="Abrir menú">☰</button>
+      <nav class="public-nav" id="publicNav">
+        <a href="#como-funciona" data-scroll="como-funciona">Cómo funciona</a>
+        <a href="#beneficios" data-scroll="beneficios">Beneficios</a>
+        <button class="btn btn-outline" data-view="login">Iniciar sesión</button>
+        <button class="btn btn-primary" data-view="register">Crear cuenta</button>
+      </nav>
+    </header>
+    <main id="mainContent"></main>
+    <footer class="public-footer" id="publicFooter">
+      <div class="footer-brand"><img src="assets/solo" alt="PsicoLink"><span>Conectando personas con su bienestar.</span></div>
+      <span>© <span id="year"></span> PsicoLink </span>
+    </footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
