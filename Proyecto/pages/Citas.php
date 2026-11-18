@@ -1,5 +1,5 @@
 <?php
-include 'Consulta.php'
+include '../controllers/Consulta.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -9,11 +9,21 @@ include 'Consulta.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamiento de citas - PsicoLink</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style/styles.css">
+
 </head>
 
 <body style="background: linear-gradient(135deg, #18a596, #0d74b8); min-height: 100vh;">
 
-    <div class="container py-5">
+  <header class="public-header">
+    <a href="index.html" class="brand" aria-label="Ir al inicio">
+      <img src="../img/logo.png" alt="PsicoLink">
+    </a>
+    <nav class="public-nav" aria-label="Navegacion principal">
+      <a class="btn btn-primary" href="index.html" style="color: white;">Regresar</a>
+    </nav>
+  </header>
+    <div class="container py-5" style="min-height: 100vh;">
         <div class="card shadow-lg border-0 rounded-4 bg-light p-4">
             <div class="card-body">
 
