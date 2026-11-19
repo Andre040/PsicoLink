@@ -9,14 +9,14 @@
 </head>
 <body>
   <header class="public-header">
-    <a href="index.html" class="brand" aria-label="Ir al inicio">
+    <a href="index.php" class="brand" aria-label="Ir al inicio">
       <img src="../img/logo.png" alt="PsicoLink">
     </a>
     <nav class="public-nav" aria-label="Navegacion principal">
       <a href="#como-funciona">Como funciona</a>
       <a href="#beneficios">Beneficios</a>
-      <a class="btn btn-outline" href="Iniciar_sesion.html">Iniciar sesion</a>
-      <a class="btn btn-primary" href="registrarse.html" style="color: white;">Crear cuenta</a>
+      <a class="btn btn-outline" href="Iniciar_sesion.php">Iniciar sesion</a>
+      <a class="btn btn-primary" href="registrarse.php" style="color: white;">Crear cuenta</a>
     </nav>
   </header>
 
@@ -27,7 +27,7 @@
         <h1>Encuentra el apoyo que necesitas para <em>sentirte mejor.</em></h1>
         <p>PsicoLink te ayuda a conectar con profesionales de la psicologia, organizar tus citas y dar pasos hacia tu bienestar emocional, a tu ritmo.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="registrarse.html">Comenzar ahora</a>
+          <a class="btn btn-primary" href="registrarse.php">Comenzar ahora</a>
           <a class="btn btn-outline" href="">Ver mis citas</a>
         </div>
       </div>
@@ -76,13 +76,13 @@
           <div class="feature-icon">P</div>
           <h3>Para pacientes</h3>
           <p>Solicita citas y revisa el estado de tus sesiones.</p>
-          <a class="btn btn-soft" href="registrarse.html" style="display:inline-block;margin-top:18px">Soy paciente</a>
+          <a class="btn btn-soft" href="registrarse.php" style="display:inline-block;margin-top:18px">Soy paciente</a>
         </article>
         <article class="feature-card">
           <div class="feature-icon">+</div>
           <h3>Para psicologos</h3>
           <p>Gestiona citas y revisa las solicitudes de pacientes.</p>
-          <a class="btn btn-soft" href="Iniciar_sesion.html" style="display:inline-block;margin-top:18px">Soy psicologo</a>
+          <a class="btn btn-soft" href="Iniciar_sesion.php" style="display:inline-block;margin-top:18px">Soy psicologo</a>
         </article>
         <article class="feature-card">
           <div class="feature-icon">!</div>
@@ -98,7 +98,7 @@
         <h2>Da el siguiente paso con PsicoLink</h2>
         <p>Crea tu cuenta y comienza a organizar tu atencion.</p>
       </div>
-      <a class="btn" href="registrarse.html">Crear cuenta gratis</a>
+      <a class="btn" href="registrarse.php">Crear cuenta gratis</a>
     </section>
   </main>
 

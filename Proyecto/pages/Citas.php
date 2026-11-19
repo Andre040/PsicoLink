@@ -16,11 +16,11 @@ include '../controllers/Consulta.php';
 <body style="background: linear-gradient(135deg, #18a596, #0d74b8); min-height: 100vh;">
 
   <header class="public-header">
-    <a href="index.html" class="brand" aria-label="Ir al inicio">
+    <a href="index.php" class="brand" aria-label="Ir al inicio">
       <img src="../img/logo.png" alt="PsicoLink">
     </a>
     <nav class="public-nav" aria-label="Navegacion principal">
-      <a class="btn btn-primary" href="index.html" style="color: white;">Regresar</a>
+      <a class="btn btn-primary" href="index.php" style="color: white;">Regresar</a>
     </nav>
   </header>
     <div class="container py-5" style="min-height: 100vh;">

@@ -10,7 +10,7 @@
 
 <body>
   <header class="public-header">
-    <a href="index.html" class="brand" aria-label="PsicoLink">
+    <a href="index.php" class="brand" aria-label="PsicoLink">
       <img src="../img/logo.png" alt="PsicoLink">
     </a>
   </header>
@@ -25,7 +25,7 @@
       <h1>Crea tu cuenta</h1>
       <p class="auth-subtitle">Completa el formulario para registrarte.</p>
 
-      <form action="iniciar_sesion.html" method="post">
+      <form action="iniciar_sesion.php" method="post">
         <div class="form-group">
           <label for="name">Nombre completo</label>
           <input class="form-control" id="name" name="name" type="text" placeholder="Tu nombre y apellido" minlength="3"
@@ -47,8 +47,8 @@
       </form>
 
       <p class="auth-bottom">
-        ¿Ya tienes cuenta? <a class="link-btn" href="Iniciar_sesion.html">Inicia sesion</a><br>
-        <a class="link-btn" href="index.html">Volver al inicio</a>
+        ¿Ya tienes cuenta? <a class="link-btn" href="Iniciar_sesion.php">Inicia sesion</a><br>
+        <a class="link-btn" href="index.php">Volver al inicio</a>
       </p>
     </section>
   </main>

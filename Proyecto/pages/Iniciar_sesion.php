@@ -1,3 +1,11 @@
+<?php
+if (isset($_SESSION['usuario_id'])){
+  header('location: Citas.php');
+  exit;
+}
+$error= $_SESSION['error_login'] ?? null;
+unset($_SESSION['error_login']);
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -9,7 +17,7 @@
   </head>
   <body>
     <header class="public-header">
-      <a href="index.html" class="brand" aria-label="PsicoLink">
+      <a href="index.php" class="brand" aria-label="PsicoLink">
         <img src="../img/logo.png" alt="PsicoLink">
       </a>
     </header>
@@ -35,8 +43,8 @@
         </form>
 
         <p class="auth-bottom">
-          ¿No tienes cuenta? <a class="link-btn" href="registrarse.html">Registrate</a><br>
-          <a class="link-btn" href="index.html">Volver al inicio</a>
+          ¿No tienes cuenta? <a class="link-btn" href="registrarse.php">Registrate</a><br>
+          <a class="link-btn" href="index.php">Volver al inicio</a>
         </p>
       </section>
     </main>
