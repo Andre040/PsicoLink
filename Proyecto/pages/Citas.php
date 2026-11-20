@@ -38,7 +38,7 @@ include '../controllers/Consulta.php';
                     <div class="col-sm-12 col-md-4">
                         <div class="p-3 bg-white rounded-3 shadow-sm">
                             <h5 class="mb-3 text-primary">
-                                <?php echo $editando ? "Modificar Cita" : "Nueva Cita"; ?>
+                                <?php echo $editando ? "Modificar Cita" : "+ Agendar seguimiento"; ?>
                             </h5>
 
                             <form method="post">
@@ -61,7 +61,7 @@ include '../controllers/Consulta.php';
                                         <button class="btn btn-warning fw-semibold" type="submit" name="Actualizar">Actualizar Cita</button>
                                         <a href="<?php echo strtok($_SERVER["REQUEST_URI"], '?'); ?>" class="btn btn-secondary btn-sm">Cancelar Edición</a>
                                     <?php else: ?>
-                                        <button class="btn btn-primary" type="submit" name="Guardar" value="Guardar">Guardar Cita</button>
+                                        <button class="btn btn-primary" type="submit" name="Guardar" value="Guardar">+ Agendar seguimiento</button>
                                     <?php endif; ?>
                                 </div>
                             </form>
@@ -91,19 +91,35 @@ include '../controllers/Consulta.php';
                                                 $fecha_hora = $row['fecha'] . " " . substr($row['hora'], 0, 5);
                                                 $id_formateado = str_pad($row['id_cita'], 3, "0", STR_PAD_LEFT);
                                                 
+                                                $estado = $row['estado'];
+                                                $clase_estado = 'bg-warning text-dark';
+                                                if ($estado === 'Confirmada' || $estado === 'Aceptada') {
+                                                    $clase_estado = 'bg-success';
+                                                } elseif ($estado === 'Cancelada') {
+                                                    $clase_estado = 'bg-danger';
+                                                }
+
+                                                $acciones = '';
+                                                if ($estado === 'Pendiente') {
+                                                    $acciones .= "<a href='?modificar={$row['id_cita']}' class='btn btn-warning btn-sm mb-1'>Modificar</a> ";
+                                                }
+                                                if ($estado === 'Pendiente' || $estado === 'Confirmada' || $estado === 'Aceptada') {
+                                                    $acciones .= "
+                                                        <form method='post' style='display:inline-block;' onsubmit='return confirm(\"¿Estás seguro de cancelar/Si cancelas la cita antes de 24 horas seras multado?\");'>
+                                                            <input type='hidden' name='id_cita' value='{$row['id_cita']}'>
+                                                            <button type='submit' name='Eliminar' class='btn btn-danger btn-sm mb-1'>Cancelar</button>
+                                                        </form>";
+                                                }
+                                                if ($acciones === '') {
+                                                    $acciones = "<span class='text-muted'>Sin acciones</span>";
+                                                }
+
                                                 echo "<tr>
                                                         <td>" . htmlspecialchars($row['nombre']) . "</td>
                                                         <td>{$fecha_hora}</td>
                                                         <td>" . htmlspecialchars($row['motivo']) . "</td>
-                                                        <td><span class='badge bg-warning text-dark'>{$row['estado']}</span></td>
-                                                        <td>
-                                                            <a href='?modificar={$row['id_cita']}' class='btn btn-warning btn-sm mb-1'>Modificar</a>
-                                                            
-                                                            <form method='post' style='display:inline-block;' onsubmit='return confirm(\"¿Estás seguro de cancelar/eliminar esta cita?\");'>
-                                                                <input type='hidden' name='id_cita' value='{$row['id_cita']}'>
-                                                                <button type='submit' name='Eliminar' class='btn btn-danger btn-sm mb-1'>Cancelar</button>
-                                                            </form>
-                                                        </td>
+                                                        <td><span class='badge {$clase_estado}'>{$estado}</span></td>
+                                                        <td>{$acciones}</td>
                                                     </tr>";
                                             }
                                         } else {
