@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-          <label for="email">Correo electronico</label>
+          <label for="email">Correo eléctronico</label>
           <input class="form-control" id="email" name="email" type="email" placeholder="nombre@correo.com" required>
         </div>
 
@@ -43,6 +43,26 @@
             minlength="6" required>
         </div>
 
+
+        <div class="form-group">
+          <label for="fecha_nacimiento">Fecha de nacimiento</label>
+          <input class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" type="date" max="<?php echo date('Y-m-d'); ?>" required>
+         </div>
+
+        <div class="form-group">
+          <label for="genero">Genero</label>
+          <select class="form-control" id="genero" name="genero" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="femenino">Femenino</option>
+            <option value="masculino">Masculino</option>
+            <option value="no_especifica">Prefiero no decirlo</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input class="form-control" id="telefono" name="telefono" type="tel" placeholder="3001234567" pattern="[0-9]{7,15}" title="Ingresa solo números (entre 7 y 15 dígitos)" required>
+        </div>
         <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
       </form>
 
